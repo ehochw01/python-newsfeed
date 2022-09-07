@@ -6,7 +6,7 @@
   <div class="meta">
     {{post.vote_count}} {{post.vote_count|format_plural('point')}} by {{post.user.username}} on {{post.created_at|format_date}}
     |
-    <!-- syntax post.comments|length is how Jinja prints the length of an array -->
+    <!--the syntax post.comments|length is how Jinja prints the length of an array -->
     <a href="/post/{{post.id}}">{{post.comments|length}} {{post.comments|length|format_plural('comment')}}</a>
   </div>
 </article>
