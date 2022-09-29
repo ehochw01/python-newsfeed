@@ -8,8 +8,11 @@
   </h2>
   <form class="edit-post-form">
     <div>
+      <h4>Post Title:</h4>
       <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{post.post_url|format_url}})</span>
+      <h4>Post Url:</h4>
+      <input name="post-url" type="text" value="{{post.post_url}}" />
+      <!-- <span>({{post.post_url}})</span> -->
     </div>
     <div>
       {{post.vote_count|format_plural('point')}} by you on {{post.created_at|format_date}}

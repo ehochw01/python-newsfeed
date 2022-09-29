@@ -5,6 +5,7 @@ from app.db import get_db
 from app.utils.auth import login_required
 # requried to actually see error messages
 import sys
+import logging
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 
@@ -137,17 +138,20 @@ def create():
 
     return jsonify(id = newPost.id)
 
+# updating a post
 @bp.route('/posts/<id>', methods=['PUT'])
 @login_required
 def update(id):
     data = request.get_json()
     db = get_db()
+    logging.debug('in the update route')
 
     try:
         # get the post that you're updating
         post = db.query(Post).filter(Post.id == id).one()
         # update the title
         post.title = data['title']
+        post.post_url = data['post_url']
         db.commit()
     except:
         print(sys.exc_info()[0])
