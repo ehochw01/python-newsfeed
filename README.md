@@ -4,6 +4,9 @@
 
 Just Tech News is a website where users can post, upvote, and comment on links to news articles. In this project I used Python to refactor an existing application originally built using Node.js.
 
+I also refactored the app using Java. This can be viewed in my [tech-news-java-api](https://github.com/ehochw01/tech-news-java-api) repo.
+
+
 ## Table of Contents
 
 - [Deployed Link](#link)
